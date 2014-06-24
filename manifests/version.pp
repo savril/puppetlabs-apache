@@ -19,7 +19,7 @@ class apache::version {
       }
     }
     'Debian': {
-      if $::operatingsystem == 'Ubuntu' and $::operatingsystemrelease >= 13.10 {
+      if ($::operatingsystem == 'Ubuntu' and $::operatingsystemrelease >= 13.10)or ($::operatingsystem == 'Debian' and $::operatingsystemrelease != 'jessie') {
         $default = '2.4'
       } else {
         $default = '2.2'
